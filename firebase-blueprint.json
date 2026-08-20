@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "reservations": {
+      "title": "Reservations",
+      "description": "Customer table bookings and service inquiries",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "reservationCode": { "type": "string" },
+        "fullName": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "guestCount": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "seatingArea": { "type": "string" },
+        "diningOccasion": { "type": "string" },
+        "specialRequests": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "completed", "cancelled"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["reservationCode", "fullName", "contactNumber", "guestCount", "date", "timeSlot", "status", "createdAt"]
+    }
+  },
+  "rules": [
+    {
+      "collection": "reservations",
+      "allow": {
+        "read": "true",
+        "create": "true",
+        "update": "true",
+        "delete": "true"
+      }
+    }
+  ]
+}

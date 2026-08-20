@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Table bookings collection for Kings Crown restaurant
+    match /TableBookings/{bookingId} {
+      allow read, write: if true;
+    }
+    match /reservations/{reservationId} {
+      allow read, write: if true;
+    }
+  }
+}
+

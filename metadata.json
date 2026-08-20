@@ -1,0 +1,6 @@
+{
+  "name": "Kings' Crown - Bar & Restaurant Chinsurah",
+  "description": "Luxury family AC bar, restaurant, and rooftop dining destination at Rupali Arcade, Chinsurah R.S., West Bengal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
