@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { BrandIntroSection } from './components/BrandIntroSection';
@@ -100,14 +101,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#F5F5F0] flex flex-col font-sans selection:bg-[#C5A059]/30 selection:text-[#F5F5F0]">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed top-20 right-4 sm:right-8 z-50 bg-[#141414] border border-[#C5A059] text-[#F5F5F0] px-4 py-3 shadow-2xl backdrop-blur-md flex items-center gap-2.5 text-xs animate-in slide-in-from-top-4 duration-300">
-          <Sparkles className="w-4 h-4 text-[#C5A059] shrink-0" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
+    <>
+      <SpeedInsights />
+      <div className="min-h-screen bg-[#0A0A0A] text-[#F5F5F0] flex flex-col font-sans selection:bg-[#C5A059]/30 selection:text-[#F5F5F0]">
+        {/* Toast Notification */}
+        {toastMessage && (
+          <div className="fixed top-20 right-4 sm:right-8 z-50 bg-[#141414] border border-[#C5A059] text-[#F5F5F0] px-4 py-3 shadow-2xl backdrop-blur-md flex items-center gap-2.5 text-xs animate-in slide-in-from-top-4 duration-300">
+            <Sparkles className="w-4 h-4 text-[#C5A059] shrink-0" />
+            <span>{toastMessage}</span>
+          </div>
+        )}
 
       {/* Main Transparent / Sticky Navigation */}
       <Navbar
@@ -236,6 +239,7 @@ export default function App() {
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
       />
-    </div>
+      </div>
+    </>
   );
 }
